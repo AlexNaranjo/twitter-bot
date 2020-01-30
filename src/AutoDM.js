@@ -3,12 +3,14 @@ const my_user_name = require("../config").userName;
 const timeout = 1000 * 60 * 5; 
 
 const AutoDM = () => {
-  const stream = T.stream("user");
+  var stream = T.stream('statuses/filter', { track: '@IdeaOriginalEs' });
+  console.log(stream);
   console.log("Empezamos a enviar mensajitos 🚀🚀🚀");
   stream.on("follow", SendMessage);
 };
 
 const SendMessage = user => {
+  console.log("1");
   const { screen_name, name } = user.source;
 
   const obj = {
