@@ -6,7 +6,7 @@ const AutoDM = () => {
   var stream = T.stream('statuses/filter', { track: '@IdeaOriginalEs' });
   console.log(stream);
   console.log("Empezamos a enviar mensajitos 🚀🚀🚀");
-  stream.on("follow", SendMessage);
+  stream.on("favorite", SendMessage);
 };
 
 const SendMessage = user => {
